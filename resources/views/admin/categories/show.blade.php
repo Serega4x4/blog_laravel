@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Categories</h1>
+            <h1 class="m-0">{{ $category->title }}</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -26,31 +26,23 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-2 mb-3">
-                <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-primary">Add category</a>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-6">
                 <div class="card">
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
                       <table class="table table-hover text-nowrap">
-                        <thead>
-                          <tr>
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>Actions</th>
-                          </tr>
-                        </thead>
                         <tbody>
-                            @foreach ($categories as $category)
+
                             <tr>
+                              <td>ID</td>
                               <td>{{ $category->id }}</td>
-                              <td>{{ $category->title }}</td>
-                              <td><a href="{{ route('admin.category.show', $category->id) }}"><i class="far fa-eye"></i></a></td>
                             </tr>
-                            @endforeach
+
+                            <tr>
+                                <td>Name</td>
+                                <td>{{ $category->title }}</td>
+                              </tr>
+
                         </tbody>
                       </table>
                     </div>
