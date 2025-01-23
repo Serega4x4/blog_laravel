@@ -27,9 +27,13 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-12">
-                <form action="#" class="w-25">
+                <form action="{{ route('admin.category.store') }}" method="POST" class="w-25">
+                    @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name of category">
+                        <input type="text" class="form-control" name="title" placeholder="Name of category">
+                        @error('title')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                       </div>
                       <input type="submit" class=" btn btn-primary" value="Add">
                 </form>

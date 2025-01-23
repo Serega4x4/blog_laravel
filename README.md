@@ -3,3 +3,4 @@
 #### php artisan ui bootstrap
 #### php artisan ui:auth
 #### npm install vite@6.0.8 --save-dev && npm run dev
+#### composer require doctrine/dbal
