@@ -8,6 +8,6 @@ use App\Models\Category;
 class ShowController extends Controller
 {
     public function __invoke(Category $category){
-        return view('admin.categories.show', compact('category'));
+        return view('admin.category.show', compact('category'));
     }
 }
