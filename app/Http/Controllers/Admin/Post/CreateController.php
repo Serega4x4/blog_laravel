@@ -8,7 +8,8 @@ use App\Models\Tag;
 
 class CreateController extends Controller
 {
-    public function __invoke(){
+    public function __invoke()
+    {
         $categories = Category::all();
         $tags = Tag::all();
 
