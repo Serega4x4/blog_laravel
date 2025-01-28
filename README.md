@@ -13,7 +13,7 @@ Doctrine DBAL: for handling database schema changes
 Vite: for building the frontend  
 
 ### Installation:
-sudo apt update
+sudo apt update  
 sudo apt install php8.3.11  
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"  
 php composer-setup.php  
