@@ -13,10 +13,11 @@ Doctrine DBAL: for handling database schema changes
 Vite: for building the frontend  
 
 ### Installation:
-sudo apt install php  
+sudo apt update
+sudo apt install php8.3.11  
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"  
 php composer-setup.php  
-composer create-project laravel/laravel blog  
+composer create-project laravel/laravel blog  11.38.2
 composer require laravel/ui  
 php artisan ui bootstrap  
 php artisan ui:auth  
