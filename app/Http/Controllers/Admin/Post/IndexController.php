@@ -7,7 +7,8 @@ use App\Models\Post;
 
 class IndexController extends Controller
 {
-    public function __invoke(){
+    public function __invoke()
+    {
         $posts = Post::all();
         return view('admin.post.index', compact('posts'));
     }
