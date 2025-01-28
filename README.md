@@ -1,9 +1,9 @@
 # Laravel Blog Project
 
-## Description
-This project is a Laravel-based web application designed to demonstrate API integration, data storage in a MySQL database, and access to an admin panel using AdminLTE.
+## Description:
+This project is a Laravel framework web application, data storage in a SQLite database, and access to an admin panel using AdminLTE.
 
-### Technologies and Dependencies
+### Technologies and Dependencies:
 PHP: 8.3.11  
 Laravel Framework: 11.38.2  
 Laravel UI: for generating basic templates and authentication  
@@ -12,7 +12,7 @@ AdminLTE: 3: integration of the admin panel
 Doctrine DBAL: for handling database schema changes  
 Vite: for building the frontend  
 
-### Installation
+### Installation:
 sudo apt install php  
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"  
 php composer-setup.php  
