@@ -49,7 +49,8 @@
                             <div class="form-group w-50">
                                 <label for="exampleInputFile">Add preview</label>
                                 <div class="w-50 mb-3">
-                                    <img src="{{ url('storage', $post->preview_image) }}" alt="preview_image" class="w-50">
+                                    <img src="{{ url('storage', $post->preview_image) }}" alt="preview_image"
+                                        class="w-50">
                                 </div>
                                 <div class="input-group">
                                     <div class="custom-file">
