@@ -80,11 +80,14 @@
                                 <label>Category</label>
                                 <select name="category_id" class="form-control">
                                     @foreach ($categories as $category)
-                                        <option {{ $category->title == old('category_id') ? ' selected' : '' }}
-                                            value="{{ $category->id }}">
+                                        <option value="{{ $category->id }}" 
+                                            {{ $category->title == old('category_id') ? ' selected' : '' }}>
                                             {{ $category->title }}</option>
                                     @endforeach
                                 </select>
+                                @error('category_id')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group w-50">

@@ -13,12 +13,28 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable, SoftDeletes;
 
+    const ROLE_ADMIN = 0;
+    const ROLE_READER = 1;
+
+    public static function getRoles()
+    {
+        return [
+            self::ROLE_ADMIN => 'Админ',
+            self::ROLE_READER => 'Читатель',
+        ];
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = [
+        'name', 
+        'email', 
+        'password',
+        'role',
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
