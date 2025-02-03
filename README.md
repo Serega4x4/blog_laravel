@@ -11,6 +11,7 @@ Bootstrap: for styling the interface
 AdminLTE: 3: integration of the admin panel  
 Doctrine DBAL: for handling database schema changes  
 Vite: for building the frontend  
+MailTrap: for sending messages to clients
 
 ### Installation:
 sudo apt update  
