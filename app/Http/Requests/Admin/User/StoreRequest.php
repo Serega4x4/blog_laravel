@@ -24,7 +24,6 @@ class StoreRequest extends FormRequest
         return [
             'name' => 'required|string',
             'email' => 'required|string|email|unique:users',
-            'password' => 'required|string',
             'role' => 'required|integer',
         ];
     }
@@ -39,8 +38,6 @@ class StoreRequest extends FormRequest
             'email.required' => 'Enter email',
             'email.email' => 'Email must be @',
             'email.unique' => 'That Email exist',
-            'password.required' => 'enter a password',
-            'password.string' => 'enter a password',
         ];
     }
 }
