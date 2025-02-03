@@ -19,6 +19,7 @@ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php  
 composer create-project laravel/laravel blog  11.38.2  
 composer require laravel/ui  
+php artisan ui bootstrap --auth  
 php artisan ui bootstrap  
 php artisan ui:auth  
 npm install vite@6.0.8 --save-dev && npm run dev  
