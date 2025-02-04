@@ -20,9 +20,9 @@ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php  
 git clone https://github.com/Serega4x4/blog_laravel.git  
 cd blog_laravel  
+npm install vite@6.0.8 --save-dev && npm run dev  
 cp .env.example .env  
 php artisan key:generate  
 php artisan migrate  
 php artisan db:seed  
-npm install vite@6.0.8 --save-dev && npm run dev  
 php artisan serve  
