@@ -18,10 +18,11 @@ sudo apt update
 sudo apt install php8.3.11  
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"  
 php composer-setup.php  
-composer create-project laravel/laravel blog  11.38.2  
-composer require laravel/ui  
-php artisan ui bootstrap --auth  
-php artisan ui bootstrap  
-php artisan ui:auth  
+git clone https://github.com/Serega4x4/blog_laravel.git  
+cd blog_laravel  
+cp .env.example .env  
+php artisan key:generate  
+php artisan migrate  
+php artisan db:seed  
 npm install vite@6.0.8 --save-dev && npm run dev  
-composer require doctrine/dbal  
+php artisan serve  
