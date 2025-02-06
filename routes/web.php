@@ -7,10 +7,24 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/', 'IndexController')->name('index');
 });
 
+Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
+    Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
+        Route::get('/', 'IndexController')->name('personal.main.index');
+    });
+    Route::group(['namespace' => 'Liked', 'preix' => 'liked'], function () {
+        Route::get('/', 'IndexController')->name('personal.liked.index');
+    });
+    Route::group(['namespace' => 'Comment', 'prefix' => 'comment'], function () {
+        Route::get('/', 'IndexController')->name('personal.comment.index');
+    });
+});
+
+
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('admin.main.index');
     });
+
 
     Route::group(['namespace' => 'Post', 'prefix' => 'post'], function () {
         Route::get('/', 'IndexController')->name('admin.post.index');
@@ -56,3 +70,4 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
