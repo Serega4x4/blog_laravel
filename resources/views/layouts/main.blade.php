@@ -34,10 +34,10 @@
                         </li>
                         <li class="nav-item">
                             @auth
-                            <a class="nav-link" href="{{ route('personal.main.index') }}">Login</a>
+                            <a class="nav-link" href="{{ route('personal.main.index') }}">Personal Gabinet</a>
                             @endauth
                             @guest
-                            <a class="nav-link" href="{{ route('personal.main.index') }}">Personal Gabinet</a>
+                            <a class="nav-link" href="{{ route('personal.main.index') }}">Login</a>
                             @endguest
                         </li>
                     </ul>
