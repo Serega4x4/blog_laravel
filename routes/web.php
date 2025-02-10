@@ -7,13 +7,32 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/', 'IndexController')->name('main.index');
 });
 
+
+// Posts
 Route::group(['namespace' => 'App\Http\Controllers\Post','prefix' => 'posts'], function () {
     Route::get('/', 'IndexController')->name('post.index');
     Route::get('/{post}', 'ShowController')->name('post.show');
+
     Route::group(['namespace' => 'Comment', 'prefix' => '{post}/comments'], function(){
         Route::post('/', 'StoreController')->name('post.comment.store');
     });
+
+    Route::group(['namespace' => 'Like', 'prefix' => '{post}/likes'], function(){
+        Route::post('/', 'StoreController')->name('post.like.store');
+    });
 });
+
+
+// Categories
+Route::group(['namespace' => 'App\Http\Controllers\Category', 'prefix' => 'categories'], function () {
+    Route::get('/', 'IndexController')->name('category.index');
+
+    Route::group(['namespace' => 'Post', 'prefix' => '{category}/posts'], function(){
+        Route::get('/', 'IndexController')->name('category.post.index');
+    });
+});
+
+
 
 Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
     Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
@@ -31,7 +50,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'perso
     });
 });
 
-
+// Admin Panel
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('admin.main.index');
